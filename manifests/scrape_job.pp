@@ -29,6 +29,6 @@ define prometheus::scrape_job (
     owner   => 'root',
     group   => $prometheus::group,
     mode    => $prometheus::config_mode,
-    content => "# this file is managed by puppet; changes will be overwritten\n${config}",
+    content => "# this file is managed by puppet; changes will be overwritten\n# this config is intended for job: ${job_name}\n${config}",
   }
 }
